@@ -1,0 +1,6 @@
+apiVersion: v2
+name: php-app
+description: 3-Tier PHP Application Helm Chart
+type: application
+version: 1.0.0
+appVersion: "1.0"

@@ -1,0 +1,24 @@
+replicaCount: 2
+
+image:
+  repository: 820440427786.dkr.ecr.us-west-2.amazonaws.com/php-3tier-app
+  tag: latest
+  pullPolicy: Always
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 80
+  nodePort: 30080
+
+mysql:
+  image: mysql:8.0
+  database: appdb
+  user: appuser
+  password: apppassword
+  rootPassword: rootpassword
+
+persistence:
+  enabled: true
+  size: 5Gi
+  storageClass: gp3
